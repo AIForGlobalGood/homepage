@@ -1,181 +1,173 @@
-# Building AI For Global Good — Organization & Website Plan
+# AI For Global Good — Plan
 
-This plan covers two things that grow together: the **institution** (charter, governance, policies, spin-outs) and the **website** that presents it to the world. The roadmap follows the growth stages in [Article 13 of the Charter](CHARTER.md#article-13--growth-chapters-affiliates-and-federation).
+What we're building, and how we'll grow it. Kept light on purpose while we're small.
 
-**Names used in this document:**
-- Formal name: **Building AI For Global Good**
-- Short-form name: **AI For Global Good**
-- Primary domain: `aiforglobalgood.org`
-- Legal entity name: to be determined at registration (may differ from the public brand; see Charter Art. 1.5)
+For who we are, what we believe, and who we're not affiliated with, see [CHARTER.md](CHARTER.md). This file is only about the website and the work of standing the organization up.
+
+**Rough cost of this whole plan:** ~$30/year for the main domain, maybe $20–40 for defensive domains, free for hosting (GitHub Pages) and analytics. Everything else is time.
 
 ---
 
-## What this organization is
+## Site goals
 
-We are a non-profit *builder* of AI projects for public benefit, not a grant-making foundation. Our model:
-
-1. **Incubate** projects, often with partners in low- and middle-income settings.
-2. **Share openly** — most projects stay inside the organization and are released under open licenses (Charter Art. 18.1–18.2).
-3. **Spin out** — a few projects grow to a scale or shape better carried by an independent, mission-locked entity (Charter Art. 18.3). The non-profit holds the IP license, a change-of-control veto, and any equity in trust for the mission.
-
-This dual path is why the Charter is strict about non-distribution (Art. 11.1) and mission-lock on spin-outs (Art. 18.3), and why Art. 10.1 requires explicit disclosure of any spin-out financial interest held by Founders, Trustees, or staff.
+1. **Clear.** A visitor should understand what we do in 10 seconds.
+2. **Honest.** No overclaiming while we're small. Say what exists and what's planned.
+3. **Easy to grow.** Adding a project, post, or page means adding a Markdown file.
+4. **Practices what we preach.** Fast, accessible, privacy-respecting, open source.
 
 ---
 
-## Guiding goals for the site
-
-1. **Credibility.** Within 10 seconds, a visitor should understand who we are, what we do, and why we can be trusted: a public charter, named governance, clear funding transparency, and clear independence from similarly named organizations.
-2. **Action.** Every page leads somewhere: join, volunteer, propose a project, partner, or donate.
-3. **Built to grow.** Adding a project, chapter, news post, or language means adding a Markdown file, not writing new code.
-4. **Practice what we preach.** The site is accessible (WCAG 2.2 AA), fast, privacy-respecting, low-carbon, and open source.
-
----
-
-## Technology decisions
+## Tech choices
 
 | Area | Choice |
 | ---- | ------ |
-| Framework | [Astro](https://astro.build) (static output) |
-| Content | Markdown/MDX in Astro content collections |
-| Styling | Plain CSS with design tokens (custom properties) |
-| Hosting | GitHub Pages, deployed by GitHub Actions |
-| Domain | `aiforglobalgood.org` (owned) |
-| Analytics | Privacy-friendly and cookie-free (e.g. Plausible or GoatCounter), or none |
-| Forms | External form service or GitHub Issues templates at first; no backend |
-| i18n | English first; routes structured for `/es/`, `/fr/`, etc. later |
-
-**Why these choices:** a static site costs nothing to host, has almost nothing to attack, loads fast on slow connections (important for a global audience), and lets non-developers contribute content through pull requests. If we later need logins, a member portal, or donations processing, we can add those as separate services without rewriting the site.
+| Framework | [Astro](https://astro.build) (static output) — but if we stay below ~10 pages, plain HTML + a tiny build script is fine too; we'll revisit |
+| Content | Markdown in Astro content collections |
+| Styling | Plain CSS with design tokens |
+| Hosting | GitHub Pages via GitHub Actions |
+| Analytics | Privacy-friendly (Plausible / GoatCounter), or none |
+| Forms | GitHub Issues templates at first (project proposal, volunteer interest, partner inquiry, bug) |
+| Licenses | MIT for code, CC BY 4.0 for content |
+| i18n | English first; routes ready for `/es/`, `/fr/` later |
 
 ---
 
-## Site map (MVP)
+## Site map
 
 ```
-/                     Home: mission, focus areas, call to action
-/about                Who we are, vision, principles, story, independence disclaimer
-/charter              The full Charter, rendered from CHARTER.md
-/focus-areas          The mission areas (one section or page each)
-/projects             Project directory (empty state: "Propose a project")
-/projects/[slug]      Individual project pages
-/spin-outs            Register of spin-out entities (required by Charter Art. 12.1)
-/get-involved         Volunteer, member, partner, donate paths
-/governance           Board, committees, policies, transparency reports
-/news                 Blog / announcements
-/contact              Contact and social links
+/              Home
+/about         Who we are, what we believe, independence note
+/charter       The founding statement (CHARTER.md)
+/projects      What we're building (empty state: "Propose a project")
+/projects/[slug]
+/get-involved  Volunteer, partner, support
+/news          Short updates
+/contact
 /404
 ```
 
-Footer on every page carries the Charter Art. 1.5 independence disclaimer and a link to `/about#independence`.
+The footer carries a short independence note on every page.
 
 ---
 
-## Brand coexistence — handling similar names
+## Naming and brand (handling similar-sounding orgs)
 
-Several organizations use similar names (see Charter Art. 1.5). The following practices avoid confusion and reduce legal risk:
-
-- **Always use the full three-word phrase** "AI For Global Good" (or the full formal name "Building AI For Global Good"). Never shorten to "AI for Good" or an acronym (AI4G, AIFG) in public copy.
-- **Distinctive visual identity.** Logo, wordmark, color palette, and typography must not resemble `ai4good.org`'s or ITU AI for Good's.
-- **Independence disclaimer** in the site footer and on `/about`:
-  > *"Building AI For Global Good is an independent initiative. It is not affiliated with the AI for Good Foundation ([ai4good.org](https://ai4good.org)), the ITU AI for Good platform, the United Nations, or the Erasmus AI for Global Good Initiative."*
-- **Courtesy outreach** before public launch: one short, friendly email to each of the AI for Good Foundation, the ITU AI for Good team, and ESAA. Keep copies as evidence of good-faith coexistence.
-- **No federal trademark application** on the plain phrase (likely refused as descriptive and invites opposition). Register the stylized logo/wordmark instead, once it exists.
-- **Defensive registrations:** `aiforglobalgood.com`, `.net` as redirects; `@aiforglobalgood` and `@buildingaifgg` on GitHub, LinkedIn, Mastodon, Bluesky, X (where available).
-- **Keep provenance:** date-stamped charter, website launch, first project, first partnership — all evidence of first use for common-law trademark rights.
+- Always use the full three words — *AI For Global Good*. Never shorten to "AI for Good" in copy.
+- Visual identity (logo, palette, type) must look clearly different from `ai4good.org` and ITU AI for Good. *This is the single most important differentiator; everything downstream in the plan depends on it.*
+- Independence disclaimer in the site footer and on `/about`.
+- Right after the site is live, send a short, friendly note to the AI for Good Foundation, ITU AI for Good, and ESAA — introducing ourselves and confirming independence.
+- Don't file a trademark on the plain phrase. If anything, trademark the stylized logo later.
+- Grab defensive handles (`@aiforglobalgood`) on the main platforms, and `aiforglobalgood.com` / `.net` as redirects if cheap.
 
 ---
 
 ## Roadmap
 
-### Phase 0: Founding documents (now)
+No calendar on these — we move at the speed of whoever has time.
 
-- [x] `CHARTER.md`: founding draft v0.3 (name finalized, spin-out architecture added, name/affiliation clause in Art. 1.5)
-- [x] `PLAN.md`: this document
-- [ ] Review the Charter with the founding circle; fill in founders, date, and focus areas
-- [ ] `CODE_OF_CONDUCT.md` (based on Contributor Covenant 2.1)
-- [ ] `CONTRIBUTING.md`: how to contribute content and code
-- [ ] `GOVERNANCE.md`: who decides what during the founding period
-- [ ] `SECURITY.md` and a contact email
-- [ ] Update `README.md` to link to all of the above and state the full name + short form
-- [ ] Decide on licensing: MIT for code (already in place), **CC BY 4.0** for content
-- [ ] Draft the courtesy outreach emails to AI for Good Foundation, ITU, and ESAA (do not send until after founding circle sign-off)
-- [ ] Register defensive social handles (`@aiforglobalgood`, `@buildingaifgg`) on GitHub, LinkedIn, Mastodon, Bluesky, X
-- [ ] Register defensive domains (`aiforglobalgood.com`, `.net`) as redirects if cheap/available
+### Now — founding
 
-### Phase 1: Website MVP (weeks 1–3)
+- [x] `CHARTER.md` — founding statement (v0.4, intentionally light)
+- [x] `PLAN.md`
+- [ ] Agree the founders and sign the statement
+- [ ] Short `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1)
+- [ ] Short `CONTRIBUTING.md`
+- [ ] `README.md` linking to the above
+- [ ] Register social handles and defensive domains
 
-- [ ] Scaffold Astro project; set up content collections for `pages`, `projects`, `news`, `focusAreas`, `spinOuts`
-- [ ] Base layout: header, footer (with independence disclaimer), skip-link, responsive navigation
-- [ ] Design tokens: color palette, typography scale, spacing, dark mode — visually distinct from `ai4good.org` and ITU AI for Good
-- [ ] Build the pages in the site map above; `/charter` renders `CHARTER.md` directly, so there is a single source of truth
-- [ ] `/spin-outs` reads from `src/content/spin-outs/` (empty state at launch)
-- [ ] SEO basics: titles, meta descriptions, Open Graph images, `sitemap.xml`, `robots.txt`
-- [ ] GitHub Actions: build, then run link check and accessibility check (axe / pa11y), then deploy to Pages
-- [ ] Custom domain and HTTPS
+### Soon — website MVP
 
-**Done when:** the site is live, Lighthouse scores are 95+ in every category, there are no axe violations, the home page weighs under 200 KB, and the independence disclaimer is visible in the footer of every page.
+- [ ] Scaffold Astro project; content collections for `projects`, `news`
+- [ ] Base layout: header, footer with independence note, responsive nav
+- [ ] Design tokens: palette, typography, dark mode — visually distinct from similarly named orgs
+- [ ] Build the pages above; `/charter` renders `CHARTER.md`
+- [ ] SEO basics; `sitemap.xml`, `robots.txt`
+- [ ] GitHub Actions: build + link check + accessibility check + deploy
+- [ ] Custom domain + HTTPS
+- [ ] Right after launch: send the courtesy intro notes to AI for Good Foundation, ITU AI for Good, and ESAA
 
-### Phase 2: Identity & content (weeks 3–6)
+**Done when:** site is live and public, Lighthouse ≥90 on Performance and Accessibility, no critical axe violations, independence note visible on every page. Finer polish (95+ scores, sub-200 KB) is a nice-to-have, not a launch gate.
 
-- [ ] Logo, wordmark, and visual identity (simple, works at small sizes and in monochrome; visually distinct from similarly named orgs)
-- [ ] Write the copy for every page; publish a founding announcement in `/news`
-- [ ] Focus area pages: the problem, our approach, and example projects for each
-- [ ] Create the first 2–3 project pages, even if they are only proposals
-- [ ] Get Involved flows: volunteer form, project proposal template, partner inquiry
-- [ ] Newsletter signup (privacy-respecting provider)
-- [ ] Send courtesy outreach emails to AI for Good Foundation, ITU, and ESAA
+**Launch posture:** the site is public from the moment it builds green. Empty states are honest; stealth isn't.
 
-### Phase 3: Registered Organization (Charter Stage II)
+### Next — identity and first content
 
-- [ ] Choose a jurisdiction and register; adapt the `[JURISDICTION]` clauses with legal counsel
-- [ ] Decide the formal legal name under which to register (may differ from the public brand; file a DBA/equivalent for "Building AI For Global Good" and "AI For Global Good")
-- [ ] Run formal trademark clearance (USPTO TESS, EUIPO, WIPO Global Brand) in Nice classes 9, 41, 42, 45
-- [ ] File a stylized-logo trademark once the visual identity is final (not the plain phrase)
-- [ ] Publish the Board and the Ethics & Impact Committee on `/governance`
-- [ ] Publish the policies listed in Charter Article 16, including:
-  - Projects, IP, and Spin-out Policy (implementing Art. 18)
-  - Brand and Trademark Use Policy (implementing Arts. 1.5 and 13.4)
-- [ ] Set up donations (a provider that supports the legal entity, with recurring giving)
-- [ ] Publish the first transparency page: funding sources, spending, and the spin-out register
+- [ ] Logo and wordmark (simple, works small, works monochrome, visually distinct — see Naming and brand)
+- [ ] Copy for every page; a short founding post in `/news`
+- [ ] First 2–3 project pages (even if just proposals — see "How a project becomes a page" below)
+- [ ] Simple "get involved" paths: volunteer, propose a project, partner
 
-### Phase 4: Global Network (Charter Stage III)
+### Later — registration
 
-- [ ] Add `/chapters` and `/chapters/[region]`, plus a guide to starting a chapter
-- [ ] Translations: launch Spanish and French first, chosen by where the community is
-- [ ] Fellowship and program pages
-- [ ] Annual Report as a web page plus a PDF
-- [ ] Partner directory and an impact dashboard
-- [ ] First spin-out: publish its entry on `/spin-outs` with license terms, mission-lock covenant, and Organization's interest (Charter Art. 12.1, 18.3(f))
+- [ ] Choose a jurisdiction; register as a legal entity
+- [ ] Turn the founding statement into formal governance docs — must preserve the "What we believe," "What we won't do," non-distribution, and spin-out principles from [CHARTER.md](CHARTER.md)
+- [ ] Formal trademark clearance; file the stylized logo if useful
+- [ ] Donations setup
+- [ ] First transparency page
 
-### Phase 5: Federation (Charter Stage IV)
+### Much later — if the work resonates
 
-- [ ] Multi-entity governance pages
-- [ ] Member portal, if needed (as a separate service)
-- [ ] Endowment and major-gifts pages
+- [ ] Chapters / affiliates
+- [ ] Translations
+- [ ] Annual report
+- [ ] First spin-out (and its public page)
+- [ ] Federation
 
 ---
 
-## Repository structure (target)
+## How a project becomes a project page
+
+1. Anyone opens a GitHub Issue using the **Project proposal** template.
+2. The founding team (later: a lightweight review group) looks at mission fit and risk per the "What we won't do" section of the charter.
+3. If accepted as a proposal: a short Markdown file is added under `src/content/projects/` with status `proposal`. It appears on `/projects` immediately.
+4. As the project moves to `active`, `shipped`, or `archived`, the same file is updated. No code changes required.
+
+This keeps the pipeline open to non-developers and keeps the website honest about what's real vs. aspirational.
+
+---
+
+## What we're deliberately not doing yet
+
+Managing expectations is part of the point.
+
+- **No donations yet** — we're not a registered legal entity, so we can't accept them properly.
+- **No formal board** — the founders act as an interim team until we register.
+- **No translations** — English first, until there's a community that wants another language.
+- **No member portal, logins, or accounts** — just a static site.
+- **No trademark filing** on the plain phrase (see Naming and brand).
+- **No spin-outs yet** — the mechanism is sketched in the charter, but no project is near that stage.
+- **No commitment to a launch date** — we ship when the MVP is honest, not when a calendar says so.
+
+---
+
+## We'll feel the plan is working when
+
+- The first external contributor opens a PR.
+- The first partner or volunteer reaches out via `/contact`.
+- The first project moves from `proposal` → `active`.
+
+Three signals, not metrics.
+
+---
+
+## Repo layout (target)
 
 ```
 /
-├── CHARTER.md              # Supreme governing document (rendered at /charter)
+├── CHARTER.md
 ├── PLAN.md
 ├── README.md
 ├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
-├── GOVERNANCE.md
-├── SECURITY.md
-├── LICENSE                 # MIT (code)
-├── LICENSE-CONTENT         # CC BY 4.0 (content)
+├── LICENSE               # MIT (code)
+├── LICENSE-CONTENT       # CC BY 4.0 (content)
 ├── .github/
 │   ├── workflows/deploy.yml
-│   └── ISSUE_TEMPLATE/     # project proposal, volunteer, bug
-├── public/                 # favicons, images, CNAME
+│   └── ISSUE_TEMPLATE/
+├── public/               # favicons, CNAME, images
 └── src/
     ├── content/
-    │   ├── focus-areas/
     │   ├── projects/
-    │   ├── spin-outs/
     │   └── news/
     ├── components/
     ├── layouts/
@@ -185,15 +177,16 @@ Several organizations use similar names (see Charter Art. 1.5). The following pr
 
 ---
 
-## Open decisions
+## Open questions
 
-1. ~~**Domain name**~~ — resolved: `aiforglobalgood.org`.
-2. ~~**Organization name**~~ — resolved: *Building AI For Global Good* (short form: *AI For Global Good*).
-3. ~~**Structural model**~~ — resolved: non-profit parent, with permitted mission-locked spin-outs (Charter Art. 18).
-4. **Founding circle**: who signs the Charter and serves on the Interim Board? (Needs at least half of the first Board independent of Founders — Charter Art. 9.5.)
-5. **Focus areas**: keep all six from Charter Art. 5.1, or lead with two or three?
-6. **First flagship project**: something concrete to show on the home page at launch.
-7. **Contact email and social handles** (first registration pass).
-8. **Jurisdiction for registration** (Phase 3) — materially affects legal form (e.g., US 501(c)(3), UK CIO, FR Association loi 1901, DE Verein), indemnification wording (Art. 17.3), and dispute forum (Art. 17.4).
-9. **Formal legal name** under which to register — may differ from the public brand (Charter Art. 1.5).
-10. **Visual identity brief** — must be visually distinct from `ai4good.org` and ITU AI for Good.
+1. **First project** — the biggest unknown. Without something concrete, everything else is scaffolding.
+2. **Founders** — who signs the statement and acts as the interim team?
+3. **Contact email** — one address to use everywhere.
+4. **Jurisdiction** — where we eventually register (affects the formal docs much later).
+
+---
+
+## Changelog
+
+- **v0.4** (Oct 2026) — lightened; name set to *AI For Global Good*; de-duplicated org facts (now in CHARTER); downgraded Lighthouse gate; added "deliberately not doing" and "working when" sections; added project-page pipeline.
+- **v0.1** (Oct 2026) — initial plan.
