@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Content } from '../../CHARTER.md';
+---
+<BaseLayout title="Charter" description="Our founding statement — who we are, what we believe, how we work.">
+  <article class="prose">
+    <Content />
+    <hr />
+    <p class="text-muted">
+      This page renders the <a href="https://github.com/">CHARTER.md</a> file from the repository, so there is a single source of truth for what the organization stands for.
+    </p>
+  </article>
+</BaseLayout>

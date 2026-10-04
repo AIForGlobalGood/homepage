@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).slice(0, 3);
+const news = (await getCollection('news'))
+  .sort((a, b) => +b.data.date - +a.data.date)
+  .slice(0, 3);
+---
+<BaseLayout
+  title="AI For Global Good"
+  description="A small, independent non-profit that builds AI projects for the common good, with priority for underserved communities."
+  wide
+>
+  <section class="hero">
+    <h1>AI, built for the common good.</h1>
+    <p class="lede">
+      We're a small, independent non-profit that builds AI projects for public benefit — and shares most of them openly, with priority for the communities that are most underserved.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="/projects">See our projects</a>
+      <a class="btn btn-secondary" href="/get-involved">Get involved</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>What we believe</h2>
+    <ul>
+      <li><strong>People first.</strong> Technology serves people, not the other way around.</li>
+      <li><strong>Open by default.</strong> We share our code, data, and findings openly.</li>
+      <li><strong>Honest about limits.</strong> We publish what works, what doesn't, and what we're unsure about.</li>
+      <li><strong>Careful.</strong> We think about harm before we ship. See the <a href="/charter#what-we-wont-do">things we won't do</a>.</li>
+    </ul>
+    <p><a href="/charter">Read the full founding statement →</a></p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    {projects.length === 0 ? (
+      <div class="empty-state">
+        <p><strong>No projects yet — we're just getting started.</strong></p>
+        <p>Have one in mind? <a href="/get-involved#propose-a-project">Propose a project</a>.</p>
+      </div>
+    ) : (
+      <ul class="card-list">
+        {projects.map((p) => (
+          <li>
+            <a class="card" href={`/projects/${p.id}`}>
+              <h3>{p.data.title}</h3>
+              <p>{p.data.summary}</p>
+              <div class="card-meta">
+                <span class={`status status-${p.data.status}`}>{p.data.status}</span>
+                {p.data.tags?.map((t) => <span>#{t}</span>)}
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+
+  <section>
+    <h2>News</h2>
+    <ul class="card-list">
+      {news.map((n) => (
+        <li>
+          <a class="card" href={`/news/${n.id}`}>
+            <h3>{n.data.title}</h3>
+            {n.data.summary && <p>{n.data.summary}</p>}
+            <div class="card-meta">
+              <time datetime={n.data.date.toISOString()}>
+                {n.data.date.toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>
