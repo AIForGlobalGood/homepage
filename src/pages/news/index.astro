@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const news = (await getCollection('news')).sort((a, b) => +b.data.date - +a.data.date);
+---
+<BaseLayout title="News" description="Short updates from AI For Global Good.">
+  <h1>News</h1>
+  <ul class="card-list">
+    {news.map((n) => (
+      <li>
+        <a class="card" href={`/news/${n.id}`}>
+          <h3>{n.data.title}</h3>
+          {n.data.summary && <p>{n.data.summary}</p>}
+          <div class="card-meta">
+            <time datetime={n.data.date.toISOString()}>
+              {n.data.date.toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </time>
+            {n.data.author && <span>&middot; {n.data.author}</span>}
+          </div>
+        </a>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
