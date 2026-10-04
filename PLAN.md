@@ -70,9 +70,10 @@ No calendar on these — we move at the speed of whoever has time.
 - [x] `CHARTER.md` — founding statement (v0.4, intentionally light)
 - [x] `PLAN.md`
 - [ ] Agree the founders and sign the statement
-- [ ] Short `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1)
-- [ ] Short `CONTRIBUTING.md`
-- [ ] `README.md` linking to the above
+- [x] Short `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1)
+- [x] Short `CONTRIBUTING.md`
+- [x] `README.md` linking to the above
+- [x] `LICENSE-CONTENT` (CC BY 4.0 for written content)
 - [ ] Register social handles and defensive domains
 
 ### Soon — website MVP
