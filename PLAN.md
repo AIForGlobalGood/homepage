@@ -78,13 +78,16 @@ No calendar on these — we move at the speed of whoever has time.
 
 ### Soon — website MVP
 
-- [ ] Scaffold Astro project; content collections for `projects`, `news`
-- [ ] Base layout: header, footer with independence note, responsive nav
-- [ ] Design tokens: palette, typography, dark mode — visually distinct from similarly named orgs
-- [ ] Build the pages above; `/charter` renders `CHARTER.md`
-- [ ] SEO basics; `sitemap.xml`, `robots.txt`
-- [ ] GitHub Actions: build + link check + accessibility check + deploy
-- [ ] Custom domain + HTTPS
+- [x] Scaffold Astro project; content collections for `projects`, `news`
+- [x] Base layout: header, footer with independence note, responsive nav
+- [x] Design tokens: palette, typography, dark mode — visually distinct from similarly named orgs
+- [x] Build the pages above; `/charter` renders `CHARTER.md`
+- [x] SEO basics (titles, descriptions, OG, canonical, `robots.txt`)
+- [x] GitHub Actions workflow for build + deploy to GitHub Pages
+- [x] `public/CNAME` → `aiforglobalgood.org`
+- [ ] Push to GitHub and enable Pages (Settings → Pages → Source: GitHub Actions)
+- [ ] Point DNS for `aiforglobalgood.org` at GitHub Pages (see [README.md — Deployment](README.md#deployment))
+- [ ] Add link check + accessibility check (axe/pa11y) steps to the workflow
 - [ ] Right after launch: send the courtesy intro notes to AI for Good Foundation, ITU AI for Good, and ESAA
 
 **Done when:** site is live and public, Lighthouse ≥90 on Performance and Accessibility, no critical axe violations, independence note visible on every page. Finer polish (95+ scores, sub-200 KB) is a nice-to-have, not a launch gate.
