@@ -4,7 +4,6 @@ A small, independent non-profit *builder* of AI projects for public benefit. We 
 
 Home: [aiforglobalgood.org](https://aiforglobalgood.org)
 
-> **Independence note.** We are not affiliated with the AI for Good Foundation ([ai4good.org](https://ai4good.org)), the ITU AI for Good platform, the United Nations, or the Erasmus AI for Global Good Initiative. See [CHARTER.md](CHARTER.md).
 
 ## Status
 
@@ -55,3 +54,6 @@ public/
 Pushes to `main` or `v1` trigger `.github/workflows/deploy.yml`, which builds the site and publishes it to GitHub Pages at [aiforglobalgood.org](https://aiforglobalgood.org).
 
 DNS for the apex points to GitHub Pages A records (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`); custom domain and HTTPS are configured in the repo's **Settings → Pages**.
+
+
+> **WARNING** This github organization is not affiliated with the AI for Good Foundation ([ai4good.org](https://ai4good.org)), the ITU AI for Good platform, the United Nations, or the Erasmus AI for Global Good Initiative. See [CHARTER.md](CHARTER.md).
