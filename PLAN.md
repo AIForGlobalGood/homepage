@@ -85,8 +85,9 @@ No calendar on these — we move at the speed of whoever has time.
 - [x] SEO basics (titles, descriptions, OG, canonical, `robots.txt`)
 - [x] GitHub Actions workflow for build + deploy to GitHub Pages
 - [x] `public/CNAME` → `aiforglobalgood.org`
-- [ ] Push to GitHub and enable Pages (Settings → Pages → Source: GitHub Actions)
-- [ ] Point DNS for `aiforglobalgood.org` at GitHub Pages (see [README.md — Deployment](README.md#deployment))
+- [x] Push to GitHub and enable Pages (Settings → Pages → Source: GitHub Actions)
+- [x] First deploy live at [aiforglobalgood.github.io/homepage](https://aiforglobalgood.github.io/homepage/)
+- [ ] Point DNS for `aiforglobalgood.org` at GitHub Pages (see [README.md — Deployment](README.md#deployment)); custom domain set in repo Pages settings, HTTPS after DNS verifies
 - [ ] Add link check + accessibility check (axe/pa11y) steps to the workflow
 - [ ] Right after launch: send the courtesy intro notes to AI for Good Foundation, ITU AI for Good, and ESAA
 
