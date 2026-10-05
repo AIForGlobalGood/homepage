@@ -51,7 +51,7 @@ public/
 
 ### Deploy
 
-Pushes to `main` or `v1` trigger `.github/workflows/deploy.yml`, which builds the site and publishes it to GitHub Pages at [aiforglobalgood.org](https://aiforglobalgood.org).
+Pushes to `main` trigger `.github/workflows/deploy.yml`, which builds the site and publishes it to GitHub Pages. Live preview: [aiforglobalgood.github.io/homepage](https://aiforglobalgood.github.io/homepage/). Custom domain: [aiforglobalgood.org](https://aiforglobalgood.org) (after DNS is pointed at GitHub).
 
 DNS for the apex points to GitHub Pages A records (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`); custom domain and HTTPS are configured in the repo's **Settings → Pages**.
 
