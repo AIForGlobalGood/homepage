@@ -1,0 +1,26 @@
+---
+import { orgLogo } from '../site';
+
+interface Props {
+  class?: string;
+  width?: number;
+  height?: number;
+  loading?: 'eager' | 'lazy';
+}
+
+const {
+  class: className = '',
+  width = 40,
+  height = 40,
+  loading = 'lazy',
+} = Astro.props;
+---
+<img
+  src={orgLogo.src}
+  alt={orgLogo.alt}
+  width={width}
+  height={height}
+  class={`org-logo ${className}`.trim()}
+  loading={loading}
+  decoding="async"
+/>

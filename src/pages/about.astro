@@ -1,8 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import OrgLogo from '../components/OrgLogo.astro';
+import { orgLogo } from '../site';
 ---
 <BaseLayout title="About" description="Who we are, what we believe, and who we're not affiliated with.">
   <article class="prose">
+    <figure class="about-logo">
+      <OrgLogo width={200} height={200} loading="eager" class="about-logo-img" />
+    </figure>
     <h1>About</h1>
 
     <p>
