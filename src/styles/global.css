@@ -1,26 +1,39 @@
 /* ---------- Design tokens ---------- */
 :root {
-  /* Palette — distinct from ai4good.org (warm orange) and ITU AI for Good (UN blue).
-     We use teal + warm neutrals. */
-  --color-bg: #fdfcf9;
+  /* Brand palette — matched to org logo (navy → teal → green) */
+  --color-brand-blue: #0d4f8b;
+  --color-brand-teal: #0a9dad;
+  --color-brand-green: #2aab4a;
+  --color-brand-mint: #d4f4e8;
+
+  --gradient-brand: linear-gradient(
+    105deg,
+    var(--color-brand-blue) 0%,
+    var(--color-brand-teal) 48%,
+    var(--color-brand-green) 100%
+  );
+
+  --color-bg: #ffffff;
+  --color-bg-subtle: #f4fafb;
   --color-surface: #ffffff;
-  --color-text: #1a2322;
-  --color-text-muted: #556261;
-  --color-accent: #0f766e;        /* deep teal */
-  --color-accent-hover: #0b5f58;
-  --color-border: #e5e3dc;
-  --color-link: #0f766e;
-  --color-link-hover: #0b5f58;
+  --color-text: #0a1628;
+  --color-text-muted: #4a6278;
+  --color-accent: var(--color-brand-teal);
+  --color-accent-hover: #087a88;
+  --color-accent-strong: var(--color-brand-blue);
+  --color-border: #d4e4ec;
+  --color-link: var(--color-brand-blue);
+  --color-link-hover: var(--color-brand-green);
 
   /* Status chips (project status) */
-  --status-proposal-bg: #fef3c7;
-  --status-proposal-fg: #78350f;
-  --status-active-bg: #d1fae5;
-  --status-active-fg: #065f46;
+  --status-proposal-bg: #e8f4f8;
+  --status-proposal-fg: #0d4f8b;
+  --status-active-bg: var(--color-brand-mint);
+  --status-active-fg: #166534;
   --status-shipped-bg: #dbeafe;
-  --status-shipped-fg: #1e3a8a;
-  --status-archived-bg: #f3f4f6;
-  --status-archived-fg: #374151;
+  --status-shipped-fg: #0d4f8b;
+  --status-archived-bg: #eef2f4;
+  --status-archived-fg: #4a6278;
 
   /* Type */
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -52,24 +65,26 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #0e1413;
-    --color-surface: #141c1b;
-    --color-text: #e8e6df;
-    --color-text-muted: #9aa5a3;
-    --color-accent: #5eead4;
-    --color-accent-hover: #99f6e4;
-    --color-border: #27322f;
-    --color-link: #5eead4;
-    --color-link-hover: #99f6e4;
+    --color-bg: #071018;
+    --color-bg-subtle: #0c1824;
+    --color-surface: #0f1c28;
+    --color-text: #eef4f8;
+    --color-text-muted: #94b0c4;
+    --color-accent: #3ec9d6;
+    --color-accent-hover: #6edde6;
+    --color-accent-strong: #6eb3ff;
+    --color-border: #1e3344;
+    --color-link: #6ecff0;
+    --color-link-hover: #7ee99a;
 
-    --status-proposal-bg: #3b2d0f;
-    --status-proposal-fg: #fde68a;
-    --status-active-bg: #0e3b2a;
-    --status-active-fg: #a7f3d0;
-    --status-shipped-bg: #16244a;
-    --status-shipped-fg: #bfdbfe;
-    --status-archived-bg: #262a2f;
-    --status-archived-fg: #d1d5db;
+    --status-proposal-bg: #0f2840;
+    --status-proposal-fg: #9fd4ff;
+    --status-active-bg: #0e3328;
+    --status-active-fg: #86efac;
+    --status-shipped-bg: #0f2840;
+    --status-shipped-fg: #93c5fd;
+    --status-archived-bg: #152028;
+    --status-archived-fg: #94b0c4;
   }
 }
 
@@ -86,6 +101,7 @@ html {
   line-height: 1.6;
   color: var(--color-text);
   background: var(--color-bg);
+  background-image: linear-gradient(180deg, var(--color-bg-subtle) 0%, var(--color-bg) 12rem);
   -webkit-text-size-adjust: 100%;
 }
 
@@ -118,8 +134,12 @@ h1, h2, h3, h4 {
   letter-spacing: -0.01em;
 }
 
-h1 { font-size: var(--fs-3xl); margin-top: 0; }
-h2 { font-size: var(--fs-2xl); }
+h1 { font-size: var(--fs-3xl); margin-top: 0; color: var(--color-brand-blue); }
+h2 { font-size: var(--fs-2xl); color: var(--color-brand-blue); }
+
+@media (prefers-color-scheme: dark) {
+  h1, h2 { color: var(--color-text); }
+}
 h3 { font-size: var(--fs-xl); }
 h4 { font-size: var(--fs-lg); }
 
@@ -163,7 +183,9 @@ pre code {
 blockquote {
   margin: var(--sp-4) 0;
   padding: var(--sp-3) var(--sp-4);
-  border-left: 3px solid var(--color-accent);
+  border-left: 3px solid var(--color-brand-teal);
+  background: var(--color-bg-subtle);
+  border-radius: 0 var(--radius) var(--radius) 0;
   color: var(--color-text-muted);
   font-style: italic;
 }
@@ -196,7 +218,7 @@ th {
   position: absolute;
   left: -9999px;
   top: 0;
-  background: var(--color-accent);
+  background: var(--gradient-brand);
   color: #fff;
   padding: var(--sp-2) var(--sp-4);
   text-decoration: none;
@@ -210,7 +232,7 @@ th {
 
 /* Focus */
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-brand-teal);
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -219,6 +241,18 @@ th {
 .site-header {
   border-bottom: 1px solid var(--color-border);
   background: var(--color-surface);
+  position: relative;
+}
+
+.site-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--gradient-brand);
+  opacity: 0.85;
 }
 
 .site-header-inner {
@@ -249,6 +283,10 @@ th {
 
 .site-brand-text {
   line-height: 1.2;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .org-logo {
@@ -271,9 +309,17 @@ th {
 
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
-  color: var(--color-text);
+  color: var(--color-brand-blue);
   text-decoration: underline;
+  text-decoration-color: var(--color-brand-teal);
   text-underline-offset: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .site-nav a:hover,
+  .site-nav a[aria-current="page"] {
+    color: var(--color-link);
+  }
 }
 
 /* Footer */
@@ -294,8 +340,9 @@ th {
 
 .footer-disclaimer {
   padding: var(--sp-3);
-  background: var(--color-surface);
+  background: var(--color-bg-subtle);
   border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-brand-teal);
   border-radius: var(--radius);
 }
 
@@ -325,6 +372,20 @@ th {
   letter-spacing: -0.02em;
   margin-top: 0;
   margin-bottom: var(--sp-4);
+  color: var(--color-brand-blue);
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero-copy h1 {
+    color: var(--color-text);
+  }
+}
+
+.hero-copy h1 .hero-accent {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .hero-logo {
@@ -336,7 +397,9 @@ th {
   width: min(280px, 100%);
   margin-inline: auto;
   border-radius: var(--radius);
-  box-shadow: 0 4px 24px rgb(0 0 0 / 0.08);
+  box-shadow:
+    0 4px 24px rgb(13 79 139 / 0.12),
+    0 0 0 1px rgb(10 157 173 / 0.15);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -380,26 +443,38 @@ th {
 }
 
 .btn-primary {
-  background: var(--color-accent);
+  background: var(--gradient-brand);
   color: #fff;
-  border-color: var(--color-accent);
+  border-color: transparent;
 }
 
 .btn-primary:hover {
-  background: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
+  filter: brightness(1.06);
   color: #fff;
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--color-accent);
-  border-color: var(--color-border);
+  color: var(--color-brand-blue);
+  border-color: var(--color-brand-teal);
 }
 
 .btn-secondary:hover {
-  background: var(--color-surface);
-  color: var(--color-accent-hover);
+  background: var(--color-bg-subtle);
+  color: var(--color-brand-green);
+  border-color: var(--color-brand-green);
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-secondary {
+    color: var(--color-link);
+    border-color: var(--color-brand-teal);
+  }
+
+  .btn-secondary:hover {
+    color: var(--color-link-hover);
+    border-color: var(--color-brand-green);
+  }
 }
 
 /* Cards & lists */
@@ -422,7 +497,8 @@ th {
 }
 
 .card:hover {
-  border-color: var(--color-accent);
+  border-color: var(--color-brand-teal);
+  box-shadow: 0 2px 12px rgb(10 157 173 / 0.12);
 }
 
 .card h3 {
